@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script> 
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js">      </script> -->
+  <!--  <script src="angular-route.min.js"> </script> -->
+	
+</head>
+<body ng-app="mainApp">
+	<div ng-view></div>
+
+	<script>
+var app = angular.module('mainApp', ['ngRoute']);
+app.config(function($routeProvider){
+	$routeProvider
+	.when('/',{
+		templateUrl: 'login.html'
+	})
+	.when('/register', {
+		templateUrl : 'register.html'
+	})   
+	.otherwise({
+		redirectTo:  '/'
+	});
+});
+
+app.controller('myctrl', function($scope){
+	$scope.haha = "hello";
+})
+
+
+	</script>
+</body>
+</html>
